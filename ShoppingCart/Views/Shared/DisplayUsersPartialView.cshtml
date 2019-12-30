@@ -1,0 +1,102 @@
+﻿@model IEnumerable < ShoppingCart.Models.ApplicationUser>
+
+<table class="table fixed_header">
+    <thead>
+        <tr>
+            <th>
+                No.
+            </th>
+
+            <th>
+                User
+            </th>
+
+            <th>
+                First name
+            </th>
+            <th>
+                LastName
+            </th>
+            <th>
+                DOB
+            </th>
+            <th>
+                City
+            </th>
+            <th>
+                Country
+            </th>
+            <th>
+                Address
+            </th>
+            <th>
+                Phone
+            </th>
+            <th>
+                Email
+            </th>
+
+            <th></th>
+        </tr>
+    </thead>
+<tbody>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @(++Count)
+            </td>
+            <td>
+                @{
+                    var base64 = Convert.ToBase64String(item.UserPhoto);
+                    var ImageSrc = string.Format("data:image/jpg;base64,{0}", base64);
+                }
+                <img src="@ImageSrc" class="circle-image" width="40" height="40" />
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.FirstName)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DateOfBirth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.City)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Country)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Address)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phone)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Email)
+            </td>
+
+            <td>
+                <a href="@Url.Action("UserProfile", "Profile", new {UserId = item.Id })" title="See Profile">
+                    <i class="fa fa-user Label-User"></i>
+                </a>
+                |
+                <a href="@Url.Action("DeleteProfile", "Admin" ,new {UserId = item.Id })" title="Remove user" style="color:gray">
+                    <i class="fa fa-trash Label-Trash"></i>
+                </a>
+            </td>
+        </tr>
+
+                    }
+</tbody>
+   
+</table>
+
+
+
+
+
+

@@ -1,0 +1,141 @@
+﻿@model ShoppingCart.Models.OrderProfileInformationViewModel
+
+@{
+    ViewBag.Title = "User Profile";
+}
+
+@if (User.Identity.IsAuthenticated)
+{
+    <div class="Text-Center col-lg-12" style="padding-bottom:5%">
+        <hr />
+        @{
+            var base64 = Convert.ToBase64String(Model.UserInfo.UserPhoto);
+            var ImageSrc = string.Format("data:image/jpg;base64,{0}", base64);
+        }
+        <img src="@ImageSrc" class="center circle-image" id="imagePreview" style="max-height:35%;max-width:23%;" width="200" height="250" />
+
+        <div class="col-lg-12 Userinfotble">
+            <table class="col-lg-6">
+                <thead>
+                    <tr style="text-align:left;background-color:dodgerblue;color:white">
+                        <td colspan="2" style="font-weight:600;padding:10px">
+                            Personal Information
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Name
+                        </td>
+                        <td style="text-align:left">
+                            @(Model.UserInfo.FirstName + " " + Model.UserInfo.LastName )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Email
+                        </td>
+                        <td style="text-align:left">
+                            @Model.UserInfo.Email
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Date of Birth
+                        </td>
+                        <td style="text-align:left">
+                            @(Model.UserInfo.DateOfBirth )
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Phone
+                        </td>
+                        <td style="text-align:left">
+                            @(Model.UserInfo.Phone )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Address
+                        </td>
+                        <td style="text-align:left">
+                            @(Model.UserInfo.Address )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            City
+                        </td>
+                        <td style="text-align:left">
+                            @(Model.UserInfo.City )
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Country
+                        </td>
+                        <td style="text-align:left">
+                            @(Model.UserInfo.Country )
+                        </td>
+                    </tr>
+
+                </tbody>
+            </table>
+            <table class="col-lg-6">
+                <thead>
+                    <tr style="text-align:left;background-color:dodgerblue;color:white">
+                        <td colspan="2" style="font-weight:600;padding:10px">
+                            Shopping Information
+                        </td>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Total orders
+                        </td>
+                        <td style="text-align:left">
+                            @Model.OrdersCount
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Products
+                        </td>
+                        <td style="text-align:left">
+                            @Model.ProductsCount
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:left;padding-left:20px">
+                            Total amount
+                        </td>
+                        <td style="text-align:left">
+                            @Model.TotalPurchase
+                        </td>
+                    </tr>
+                 </tbody>
+            </table>
+        </div>
+        <hr />
+        @if (User.Identity.IsAuthenticated && User.Identity.Name == Model.UserInfo.UserName)
+        {
+             <div class="Text-Center">
+                 @Html.ActionLink("  Edit Profile  ", "EditProfile", "Profile", new { UserId = Model.UserInfo.Id }, htmlAttributes: new { @class = "Btn-Register" })
+            </div>
+        }
+      </div>
+            }
+            else
+            {
+                <h4 class="Text-Center">Please login to see profile</h4>
+            }
+
+
+
+
+
+

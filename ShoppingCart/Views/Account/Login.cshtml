@@ -1,0 +1,41 @@
+﻿@using ShoppingCart.Models
+@model LoginViewModel
+@{
+    ViewBag.Title = "Log in";
+}
+
+
+<div class="Form-Register Text-Center" style="margin-left:35%">
+    <h2 class="Text-Center">@ViewBag.Title</h2>
+    <hr />
+    <h4 class="Text-Center">Use a local account to log in.</h4>
+    <hr />
+            @using (Html.BeginForm("Login", "Account", new { ReturnUrl = ViewBag.ReturnUrl }, FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
+            {
+                @Html.AntiForgeryToken() 
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="Text-Center">
+                    @Html.EditorFor(m => m.Email, new { htmlAttributes = new { @class = "Form-Control", @placeholder = "First name" } })
+                    <br />
+                    @Html.PasswordFor(m => m.Password, new { @class = "Form-Control", @placeholder = "Password" })
+                    <br />
+                    @Html.CheckBoxFor(m => m.RememberMe)
+                    @Html.LabelFor(m => m.RememberMe)
+                    </div>
+                    <hr />
+                    <input type="submit" value="Log in" class="Btn-Register" />
+                    @* Enable this once you have account confirmation enabled for password reset functionality
+                        <p>
+                            @Html.ActionLink("Forgot your password?", "ForgotPassword")
+                        </p>*@
+            }
+    <div class="Text-Center">
+        <section id="socialLoginForm">
+            @Html.Partial("_ExternalLoginsListPartial", new ExternalLoginListViewModel { ReturnUrl = ViewBag.ReturnUrl })
+        </section>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

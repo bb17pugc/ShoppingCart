@@ -1,0 +1,617 @@
+﻿.Mycontainer {
+  overflow-wrap:break-word;
+}
+
+.col-lg-1 {
+    width: 8.333333333333332%;
+  }
+  .col-lg-2 {
+    width: 16.666666666666664%;
+  }
+  .col-lg-3 {
+    width: 25%;
+  }
+  .col-lg-4 {
+    width: 33.33333333333333%;
+  }
+  .col-lg-5 {
+    width: 41.66666666666667%;
+  }
+  .col-lg-6 {
+    width: 50%;
+  }
+  .col-lg-7 {
+    width: 58.333333333333336%;
+  }
+  .col-lg-8 {
+    width: 66.66666666666666%;
+  }
+  .col-lg-9 {
+    width: 75%;
+  }
+  .col-lg-10 {
+    width: 83.33333333333334%;
+  }
+  .col-lg-11 {
+    width: 91.66666666666666%;
+  }
+  .col-lg-12 {
+    width: 100%;
+  }
+
+  .col-lg-pull-1 {
+    right: 8.333333333333332%;
+  }
+  .col-lg-pull-2 {
+    right: 16.666666666666664%;
+  }
+  .col-lg-pull-3 {
+    right: 25%;
+  }
+  .col-lg-pull-4 {
+    right: 33.33333333333333%;
+  }
+  .col-lg-pull-5 {
+    right: 41.66666666666667%;
+  }
+  .col-lg-pull-6 {
+    right: 50%;
+  }
+  .col-lg-pull-7 {
+    right: 58.333333333333336%;
+  }
+  .col-lg-pull-8 {
+    right: 66.66666666666666%;
+  }
+  .col-lg-pull-9 {
+    right: 75%;
+  }
+  .col-lg-pull-10 {
+    right: 83.33333333333334%;
+  }
+  .col-lg-pull-11 {
+    right: 91.66666666666666%;
+  }
+  .col-lg-offset-0 {
+    margin-left: 0;
+  }
+  .col-lg-offset-1 {
+    margin-left: 8.333333333333332%;
+  }
+  .col-lg-offset-2 {
+    margin-left: 16.666666666666664%;
+  }
+  .col-lg-offset-3 {
+    margin-left: 25%;
+  }
+  .col-lg-offset-4 {
+    margin-left: 33.33333333333333%;
+  }
+  .col-lg-offset-5 {
+    margin-left: 41.66666666666667%;
+  }
+  .col-lg-offset-6 {
+    margin-left: 50%;
+  }
+  .col-lg-offset-7 {
+    margin-left: 58.333333333333336%;
+  }
+  .col-lg-offset-8 {
+    margin-left: 66.66666666666666%;
+  }
+  .col-lg-offset-9 {
+    margin-left: 75%;
+  }
+  .col-lg-offset-10 {
+    margin-left: 83.33333333333334%;
+  }
+  .col-lg-offset-11 {
+    margin-left: 91.66666666666666%;
+  }
+
+.TextArea 
+{
+    background-color:rebeccapurple;
+}
+
+input[type=checkbox] 
+{
+    -webkit-transform: scale(1.5); /* Safari and Chrome */
+}
+
+.TextAreaDisplay 
+{
+   max-width:50px;
+}
+
+.Input-White 
+{
+    padding-left:10px;
+    padding:5px;
+    width:1000px;
+    border:none;
+}
+
+
+ul.SearchBar li:hover
+{
+
+}
+
+.Navigationbar 
+{
+  position:fixed;
+  width:100%;
+  background-color:dodgerblue;
+  top:0;
+  padding-bottom:1%;
+  z-index: 2;
+  border: 1px solid transparent;
+}
+ .Label-User {
+  background-color:dodgerblue;
+  color:white;  
+}
+.label-Assign {
+    background-color:forestgreen;
+    color:white;
+}
+
+.Label-Trash {
+    color:gray;
+    background-color:lightgray;
+}
+.Label-Trash , .Label-User , .label-Assign
+{
+    padding:10px;
+    border-radius:10px;
+    cursor:pointer
+}
+
+
+.Right li 
+{
+    float:right !important
+}
+.Left li 
+{
+    float:left !important
+}
+
+.Dropdown-open 
+{
+  padding-left:10%;
+  padding-right:5%;
+  padding-top:5%;
+  padding-bottom:8%;
+  border-radius:20px;
+  border:none;
+  display:inline-flex;
+}
+
+#footer a 
+{
+    color:white
+}
+
+
+    .NavigationList li 
+    {
+        float:left;
+        margin-left:2%;
+        padding-left:2%;
+        padding-right:2%;
+        padding-top:0.5%;
+        padding-bottom:0.5%;
+        text-align:center;
+        overflow-wrap:break-word;
+        background-color:blue;
+        cursor : pointer;
+    }
+
+        .SideMenu a:active {
+            background-color:white;
+            color:black;
+
+        }
+
+ul.SideMenu 
+{
+    justify-content: center;
+    display: flex;
+    margin:auto;
+    list-style-type:none;
+    background-color:grey
+}
+
+ .SideMenu li 
+    {
+        float:left;
+        margin-left:2%;
+        background-color:dodgerblue;
+    }
+
+a.Selected 
+{
+        background-color:white !important;
+        color:black !important;
+}
+
+    .SideMenu li a,.NavigationList li a , .Dropdown-open
+    {
+        font-size:large;
+        font-weight:600;
+        font-family:'Agency FB';
+        text-decoration:none;
+        color:white;
+        background-color:blue;
+        text-align:center;
+        display: inline-block;
+
+    }
+     .SideMenu li a
+    {
+        padding-top:2%;
+        padding-bottom:2%;
+        padding-left:30px;
+        padding-right:30px;
+        border:solid 1px dodgerblue;
+        background-color:dodgerblue;
+    }
+
+    .SideMenu li a:hover
+    {
+       background-color:white;
+       color:black;
+    }
+
+    .NavigationList li:hover  
+    {
+        background-color:white;
+        transition:1s;
+    }
+
+    .custom-file-upload:hover  
+    {
+        background-color:green !important;
+        transition:1s;
+    }
+
+    .Btn-Register:hover  
+    {
+        background-color:green !important;
+        transition:1s;
+    }
+
+   .NavigationList li:hover a  
+    {
+        background-color:white;
+        color:black;
+        transition:1s;
+        float:left;
+    }
+.circle-image 
+{
+    border:solid;
+    border-color:dodgerblue;
+    border-radius:50%;
+}
+
+.Application-Name 
+{
+    font-size:40px;
+    font-weight:300;
+    color:white;
+    font-family:'Agency FB';
+}
+ 
+.Form-Control , .Search-Field   ,.custom-file-upload
+{
+    padding-top:1.5%;
+    padding-bottom:1.5%;
+    border-radius:10px;
+    padding-left:4%;
+    font-size:15px;
+    clear :both;
+}
+
+.NavigationList 
+{
+    left : -20px;
+    padding-left : 0%;
+    list-style-type:none;
+}
+
+.SideMenu 
+{
+ top:auto;
+ width:100%;
+ list-style-type:none;
+ background-color:white;
+}
+
+.dropdown-content 
+{
+    position:absolute;
+    background-color:white !important;
+    z-index:3;
+    min-width:10%;
+    max-width:10%;
+    right: 0;
+    border-radius:0px 0px 10px 10px;
+    border-top:none;
+    overflow-wrap:break-word;
+    display:none;
+}
+.dropdown-content a 
+{
+    border-bottom:1px solid silver;
+    display:block;
+    text-overflow:clip;
+    text-align:center;
+    width:100%;
+    padding-top:10%;
+    padding-bottom:10%;
+    padding-right:10%;
+    padding-left:10%;
+    color:black;
+}
+
+.DropdownButton ,.DropdownButton i
+{
+    border-top:none;
+    overflow-wrap:break-word;
+    color:white;
+    min-width:14% !important;
+    max-width:14% !important;
+    padding-left:0% !important;
+    padding-right:0% !important;
+    position:relative;
+    cursor:pointer;
+
+}
+.DropdownButton 
+{
+   cursor:none;
+}
+.Text-Right i
+{
+    border-top:none;
+    background-color:blue;
+    color:white;
+    padding-top:8% !important;
+    padding-bottom:8% !important;
+    padding-left:15% !important;
+    padding-right:25% !important;
+    position:relative;
+    cursor:pointer;
+    width:100%;
+}
+
+div.Text-Right
+{
+    min-width:5% !important;
+    max-width:5% !important;
+    float:right !important;
+    padding-right:5%;
+
+}
+
+.Text-Center 
+{
+    text-align:center;
+}
+.Text-Right 
+{
+    text-align:right;
+}
+.line {
+  border: 0;
+  clear:both;
+  display:block;
+  width: 100%;               
+  background-color:dimgray;
+  height: 1px;
+}
+
+.Table {
+    width:100%;
+    font-size:20px;
+}
+.CustomTableHeader 
+{
+    display:block;
+     width: 100%;
+}
+.CustomTableBody {
+    display: block;
+    width: 100%;
+    overflow: auto;
+    height:300px;
+}
+
+.fixed_header{
+    width: 100%;
+    table-layout: fixed;
+    border-collapse: collapse;
+    border-radius:1em;
+}
+
+.fixed_header tbody , tfoot{
+  display:block;
+  width: 100%;
+  overflow-y: auto;
+  height: auto;
+  max-height:800px;
+}
+
+.fixed_header thead tr {
+   display: block;
+}
+
+fixed_header thead {
+   display: block;
+   overflow:auto;
+}
+
+.fixed_header th, .fixed_header td {
+  text-align: center;
+  width: 100px;
+  min-width: 100px;
+}
+hr {
+   color:white;
+   clear:both;
+   width:100%;
+}
+.Black {
+   color:gray !important;
+   clear:both;
+   width:100%;
+}
+
+.Dropdown-Control 
+{
+    padding-right:90px !important;
+}
+.Form-Register 
+{
+    background-color:dodgerblue;
+    padding:3%;
+    color:white;
+    display:flex;
+    width:30%;
+    flex-direction:column;
+}
+
+.Userinfotble tr td 
+{
+    font-size:20px;
+}
+.Userinfotble 
+{
+    margin-top:4%;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
+a.Btn-Register
+{
+    width:100% !important;
+    border:none;
+    padding-left:4% !important;
+    padding-right:4% !important;
+    font-size:23px;
+    text-decoration:none;
+ }
+.Label-Small:hover
+{
+    color:white;
+}
+
+.Label-Small
+{
+    text-decoration:none;
+    border:none;
+    padding-left:2% ;
+    padding-right:2% ;
+    color:white;
+    background-color:gray;
+    float:right;
+}
+.Btn-Register 
+{
+    width:100%;
+    border:none;
+    font-size:20px;
+    font-weight:600;
+    text-align:center;
+    color:white !important;
+    background-color:dodgerblue !important;
+    margin-bottom:2%;
+    padding-top:1% ;
+    padding-bottom:1%;
+}
+
+
+.Svg-Border-Top
+{
+    fill:none;
+    stroke:white;
+    stroke-width:3;
+    opacity:5;
+    stroke-dasharray:280,450;
+    stroke-dashoffset:15
+}
+
+.Form-Control
+{
+    margin-bottom:1.5%;
+    border:none;
+    width:100%  !important;
+    padding-bottom:3% !important;
+    padding-top:3% !important;
+    padding-left:2% !important;
+    padding-right:2% !important;        
+}
+
+input[type="file"] {
+    display:none;
+}
+.custom-file-upload {
+    width:54.5% !important;
+}
+::placeholder
+{
+    color:black;
+    padding-left:5px;    
+}
+
+.Text-Center:hover .dropdown-content
+{
+    display:block;
+}
+
+.Text-Center:hover .Dropdown-open
+{
+    background-color:white;
+    color:black;
+    border-radius:10px 10px 0px 0px;
+    transition:1s;
+}
+
+
+.UserName 
+{
+    color:white;
+    margin-top:0.7%;
+    margin-left:1%;
+    float:right;
+}
+
+.UserName:hover 
+{
+    color:white;
+}
+
+.Text-Center:hover .Dropdown-open i
+{
+    color:black;
+    transition:1s;
+}
+
+ul.dropdown-List {
+    list-style-type:none;
+}
+
+.dropdown-content a:hover 
+{
+     background-color:royalblue !important;
+     color:white !important;
+     text-decoration:none;
+     transition : 1s;
+}

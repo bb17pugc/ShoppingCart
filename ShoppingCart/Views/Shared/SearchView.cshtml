@@ -1,0 +1,17 @@
+﻿@model ShoppingCart.Models.LitsPagesViewModel
+@using (Html.BeginForm("List", "Products"))
+{
+    <table cellpadding="8">
+        <tr>
+            <td>
+                @Html.Editor("Search", new { htmlAttributes = new { @id = "Search", @class = "Search-Field", @placeholder = "Search here" ,  } })
+                @Html.Hidden("Catagory", Model.CurrentCatagory)
+            </td>
+            <td style="width:60px">
+                <input type="submit" value="Search" class="btn btn-default" />
+            </td>
+            <td>
+                    </td>
+        </tr>
+    </table>
+}

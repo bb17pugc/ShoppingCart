@@ -1,0 +1,68 @@
+﻿@model ShoppingCart.Models.LitsPagesViewModel
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script src="~/Scripts/jquery.unobtrusive-ajax.min.js"></script>
+<script src="~/Scripts/Notify.js"></script>
+
+<div id="notifications" style="width:100%">
+</div>
+@foreach (var item in Model.ProductData)
+{
+    <div style="width:33%;display:inline-block">
+        <table class="table Text-Center" style="border:solid 1px dodgerblue;">
+            <tr>
+                <td colspan="2" style="width:200px;height:200px;">
+                    @{
+                        var base64 = Convert.ToBase64String(item.ProductPhoto);
+                        var imgsrc = string.Format("data:image/jpg;base64,{0}", base64);
+                    }
+
+                    <img src="@imgsrc" style="width:inherit;height:inherit;" />
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <label style="font-size:small;font-weight:100;max-width:200%;width:100%;background-color:cornflowerblue;font-size:15px;color:white;border-radius:5px;padding:5px">
+                        @(item.ID+": "+item.Name)
+                    </label>
+                </td>
+
+                <td>
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <button class="btn btn-success pull-right" onclick="AddtoCart('@item.ID')">Add to cart</button>
+                    }
+                    else
+                    {
+                        <p>please login to purchase</p>
+                    }
+                </td>
+
+            </tr>
+            <tr>
+                <td>
+                      @Html.ActionLink("Product Details" , "" , "" , htmlAttributes:new { @class="btn btn-primary btn-block"})
+                </td>
+                <td>
+                    <label class="label label-success pull-right" style="font-size:20px">
+                        @item.Price.ToString("c")
+                    </label>
+                </td>
+            </tr>
+           
+        </table>
+    </div>
+                        }
+<script src="~/Scripts/CartShopAndCartCount.js"></script>
+<style>
+    #notifications {
+        cursor: pointer;
+        position: fixed;
+        right: 0px;
+        z-index: 9999;
+        bottom: 0px;
+        margin-top: 22px;
+        margin-left: 15px;
+        max-width: 300px;
+    }
+</style>

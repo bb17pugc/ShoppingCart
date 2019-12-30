@@ -1,0 +1,51 @@
+﻿<div class="col-lg-12 Text-Center" style="height:1200px">
+    <h2 class="Text-Center Header_Black" style="z-index:10;position:relative;top:1%">
+        This Season!
+    </h2>
+    <div style="display:inline-block;float:left;height:80%;padding-right:100px" id="SideMenuDiv">
+        <img id="Sideimg1"   src="~/Images/c16.jpg"  />
+        <img id="Sideimg2"   src="~/Images/c1.jpg" />
+        <img id="Sideimg3"   src="~/Images/c2.jpg" />
+        <img id="Sideimg4"   src="~/Images/c3.jpg" />
+        <img id="Sideimg5"   src="~/Images/c4.jpg" />
+        <img id="Sideimg6"   src="~/Images/c5.jpg" />
+        <img id="Sideimg7" src="~/Images/c6.jpg"  />
+        <img id="Sideimg8" src="~/Images/c7.jpg" />
+        <img id="Sideimg9" src="~/Images/c8.jpg"  />
+        <img id="Sideimg10" src="~/Images/c10.jpg" />
+        <img id="Sideimg11" src="~/Images/c11.jpg" />
+        <img id="Sideimg12" src="~/Images/c12.jpg" />
+        <img id="Sideimg13" src="~/Images/c13.jpg" />
+        <img id="Sideimg14" src="~/Images/c14.jpg" />
+        <img id="Sideimg15" src="~/Images/c15.jpg" />
+    </div>
+ 
+</div>
+
+<script>
+
+    $(function () {
+        var i = 0;
+        for (i = 1; i <= 15; i++)
+        {
+            $("#Sideimg" + i).css("animation-delay", i+"s");
+            $("#Sideimg" + i).addClass("SideMenuAnimation");
+        }
+    });
+
+    $("#SideMenuDiv").on("mouseover", function ()
+    {
+        var i = 0;
+        for (i = 1; i <= 15; i++) {
+            $("#Sideimg" + i).css("animation-play-state", "paused");
+        }
+    });
+    $("#SideMenuDiv").on("mouseout", function () {
+        var i = 0;
+        for (i = 1; i <= 15; i++) {
+            $("#Sideimg" + i).css("animation-play-state", "running");
+        }
+    });
+
+</script>
+

@@ -1,0 +1,28 @@
+﻿@model IEnumerable<string>
+<link href="~/Content/MenuCss.css" rel="stylesheet" />
+@if (Model == null)
+{
+    <div class="well">No Catagories</div>
+}
+else
+{
+    <ul class="SideMenu">
+        @foreach (var item in Model)
+        {
+            <li>
+                @Html.RouteLink(item, new
+       {
+           controller = "Products",
+           action = "List",
+           Currentpage = "1",
+           Catagory = item
+       },
+       new { @class = (ViewBag.CurrentCatagory == item ? "Selected" : "") }
+ )
+            </li>
+        }
+    </ul>
+
+}
+
+<script src="~/Scripts/MenuAnimation.js"></script>

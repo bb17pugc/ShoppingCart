@@ -1,0 +1,47 @@
+﻿@model ShoppingCart.Models.LitsPagesViewModel
+
+@{
+    ViewBag.Title = "Products";
+}
+
+@if(Model.ProductData.Count() == 0)
+{
+   <p class="well">No result found</p>
+}
+
+@Html.Hidden("Catagory" , Model.CurrentCatagory)
+<div style="width:100%;">
+    @Html.Partial("ProductSummary", Model)
+</div>
+ 
+<div style="padding-top:10px;position:fixed;bottom:7%;float:right">
+    @if ((Model.PagesData.CurrentPage > 1))
+    {
+            @Html.RouteLink("Previous", new
+       {
+           controller = "Products",
+           action = "List",
+           Currentpage = Model.PagesData.CurrentPage - 1,
+           Catagory = Model.CurrentCatagory
+       }, new { @class = "btn btn-primary btn-sm" }
+            )
+    }
+    @if ((Model.PagesData.CurrentPage < Model.PagesData.TotalPages))
+    {
+            @Html.RouteLink("Next", new
+       {
+           controller = "Products",
+           action = "List",
+           Currentpage = Model.PagesData.CurrentPage+1,
+           Catagory = Model.CurrentCatagory
+
+       }, new { @class = "btn btn-primary btn-sm" }
+            )
+    }
+    Page : @Model.PagesData.CurrentPage   of @Model.PagesData.TotalPages
+</div>
+
+
+<script>
+
+</script>

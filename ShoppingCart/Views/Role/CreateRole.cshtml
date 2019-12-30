@@ -1,0 +1,71 @@
+﻿@model ShoppingCart.Models.RolesListViewModel
+
+@{
+    ViewBag.Title = "Create Role";
+}
+
+<div class="col-lg-12">
+     @using (Html.BeginForm())
+     {
+        @Html.AntiForgeryToken()
+        <br />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        @Html.EditorFor(model => model.UserRoles.Name, new { htmlAttributes = new { @class = "form-control", style = "margin-bottom:0%;", @placeholder = "type role" } })
+        @Html.ValidationMessageFor(model => model.UserRoles.Name)
+         <input type="submit" value="Create" style="margin-bottom:0%;" class="btn btn-default" />
+     }
+</div>
+@if (ViewBag.RoleDeleteMessage != null)
+{
+    <div class="well alert-danger" style="margin-top:20px"> 
+        @ViewBag.RoleDeleteMessage    
+    
+        @Html.ActionLink("ok" , "createRole" , "Role" ,routeValues:null , htmlAttributes :new { @Class = "btn btn-danger" } )
+    </div>
+}
+<table class="table">
+    <tbody>
+        <tr style="text-align:center;font-weight:6    
+00;font-size:20px;border:solid 1px;background-color:dodgerblue;color:white">
+            <td colspan="6">
+                Existing Roles
+            </td>
+        </tr>
+        <tr style="font-weight:600;font-size:large">
+            <td>
+                Names
+            </td>
+            <td colspan="5">
+                Users
+            </td>
+        </tr>
+        @foreach (var item in Model.RolesList)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Role.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NoOfUsers)
+                </td>
+
+                <td>
+                    <a href="@Url.Action("DeleteRoles", "Role" ,new {id = item.Role.Id })" title="Remove user" style="color:gray">
+                        <i class="fa fa-trash Label-Trash"></i>
+                    </a>
+                    |
+                    <a href="@Url.Action("AllUsersList", "Admin" ,new {RoleId = item.Role.Id })" title="users of this role" style="color:gray">
+                        <i class="fa fa-users Label-User"></i>
+                    </a>
+                    |
+                    <a href="@Url.Action("AllUsersList", "Admin" , new {RoleIdForAssignUsers =item.Role.Id })" title="Assign users to this role">
+                        <i class="fa fa-stamp label-Assign"></i>
+                    </a>
+
+                 </td>
+            </tr>
+        }
+    </tbody>
+   
+</table>
+

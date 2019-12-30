@@ -1,0 +1,110 @@
+﻿@model string
+
+<table style="color:white" class="col-lg-12">
+    <tr>
+        <td class="Text-Center">
+           
+        </td>
+        <td>
+            <div style="float:left;width:100%;background-color:white">
+                @using (Html.BeginForm( (string)ViewBag.Action , (string)ViewBag.Controller))
+                {
+                    @Html.Editor("SearchFound", new { htmlAttributes = new { @class = "Input-White", id = "SearchProductInput", placeholder = "search here", autocomplete = "off" } })
+                    <button class="btn btn-default" type="submit" style="border:none"><i class="fa fa-search"></i></button>
+                }
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td colspan="2">
+            <ul style="overflow-x: hidden;position:absolute;list-style-type:none;z-index:10;border:solid 1px;display:none;width:100%;border-top:none;padding-left:0px;padding-right:5px;background-color:white;color:black;max-height:400px;overflow-y:auto;" id="SearchList"></ul>
+        </td>
+    </tr>
+</table>
+
+
+
+<script>
+
+    $(document).ready(function () {
+
+        $(window).click(function() {
+            //Hide the menus if visible
+            $("#SearchList").css("display", "none");
+
+        });
+
+    $("#SearchProductInput").on("keyup", function () {
+        $("#SearchList").empty();
+        var Progressing = $('<li>searching</li>');
+        $("#SearchList").css("display", "block");
+        $("#SearchList").append(Progressing);
+        var Search = $(this).val();
+
+        var Currenturl = '/@ViewBag.PageUrl';
+
+        if (Search) {
+
+            $.ajax({
+                type: "POST",
+                url: Currenturl,
+                data: { "Search": Search },
+                datatype: "html",
+                success: function (data) {
+                    debugger;
+                    $("#SearchList").empty();
+                    if (data.length > 0) {
+                        $.each(data, function (index, value) {
+                            ListItem = $('<li>' + value.Name + '</li>');
+                            $("#SearchList").append(ListItem);
+
+                            ListItem.on("mouseover", function () {
+                                $(this).css({ "background-color": "dodgerblue", "cursor": "pointer", "color": "white" });
+
+                                $(this).on("click", function () {
+
+                                    $("#SearchProductInput").val($(this).text());
+                                    $("#SearchList").empty();
+                                    $("#SearchList").css("display", "none");
+                                });
+
+                            });
+
+                            ListItem.on("mouseout", function () {
+                                $(this).css({ "background-color": "white", "color": "black" });
+
+                            });
+
+                        });
+                    }
+                    else {
+                        $("#SearchList").html('<li>no result</li>');
+                    }
+                }
+
+
+            });
+        }
+
+        else
+        {
+            $("#SearchList").css("display", "none");
+        }
+
+  });
+});
+
+</script>
+
+<style>
+    #SearchList li 
+    {
+       text-align:left;
+       width:100%;
+       overflow-x:no-display;
+       background-color:white;
+       padding-left:5px;
+       padding:10px;
+       right:0px
+     }
+</style>
